@@ -39,6 +39,12 @@ namespace ejercicioRepasoMsm.Servicios
        /// msm - 040624
        /// </summary>
        public void modificarAlumno();
-      
+
+        /// <summary>
+        /// Metodo que modifica los campos del alumno
+        /// msm - 040624
+        /// </summary>
+        /// <param name="campo"></param>
+        public void camposAModificar(string campo);
     }
 }

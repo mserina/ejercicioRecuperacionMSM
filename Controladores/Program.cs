@@ -19,10 +19,20 @@ namespace ejercicioRepasoMsm
         /// <param name="args"></param>
         public static void Main(string[] args) 
         {
-        
+            AlumnosDto alumno = new AlumnosDto();
+
+            alumno.DNI = "2";
+            alumno.NombreAlumno = "mIHUE";
+            alumno.Apellido1Alumno = "SERRANO";
+            alumno.Apellido2Alumno = "MEDIA";
+            alumno.Direccion = "few";
+            alumno.Email = "sds";
+            alumno.FechaNacimiento = DateTime.Now;
+            listaAlumnos.Add( alumno );
+
             int opcionSeleccionada = 0;
             bool cerrarMenu = false;
-
+            
             MenuInterfaz mi = new MenuImplementacion();
             OperacionInterfaz op = new OperacionImplementacion();
 
@@ -78,7 +88,7 @@ namespace ejercicioRepasoMsm
                                 sw.Write("Ha seleccionado modificar alumno\n");
                                
                             }
-                            //modificar alumno
+                            op.modificarAlumno();
                         break;
 
                         default:

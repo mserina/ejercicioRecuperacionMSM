@@ -9,17 +9,21 @@ using System.Threading.Tasks;
 
 namespace ejercicioRepasoMsm.Servicios
 {
+    
     /// <summary>
     /// Contiene la logica de los metodos del servicio operacion 
     /// msm - 040624
     /// </summary>
     internal class OperacionImplementacion : OperacionInterfaz
     {
+        public static string dniInsertado;
+
         public void darAltaAlumno()
         {
             bool masAlumno = true;
             do
             {
+
                 AlumnosDto alumnos = new AlumnosDto();
 
                 Console.WriteLine("Inserte nombre");
@@ -58,11 +62,11 @@ namespace ejercicioRepasoMsm.Servicios
         public void borrarAlumno()
         {
             Console.WriteLine("Inserte el dni del alumno a borrar");
-            string dni = Console.ReadLine();
+            dniInsertado = Console.ReadLine();
 
             foreach (AlumnosDto alumnos in Program.listaAlumnos)
             {
-                if (alumnos.DNI.Equals(dni))
+                if (alumnos.DNI.Equals(dniInsertado))
                 {
                     Program.listaAlumnos.Remove(alumnos);
 
@@ -85,22 +89,85 @@ namespace ejercicioRepasoMsm.Servicios
         public void modificarAlumno()
         {
             MenuInterfaz mi = new MenuImplementacion();
-            Console.WriteLine("Inserte el dni del alumno a borrar");
-            string dni = Console.ReadLine();
+            bool cerrar = false; 
+            while (!cerrar)
+            {
+                Console.WriteLine("Inserte el dni del alumno a modificar");
+                dniInsertado = Console.ReadLine();
+                foreach (AlumnosDto alumnos in Program.listaAlumnos)
+                {
+                    if (alumnos.DNI.Equals(dniInsertado))
+                    {
+                        cerrar = true;
+                        mi.logicaMenu2();
 
-            string campo = mi.logicaMenu2();
+                    }
+                    else
+                    {
+                        Console.WriteLine(" ");
+                        Console.WriteLine("El dni insertado no existe, inserte uno distinto");
+                        Console.WriteLine(" ");
+                        
+                    }
+                }
+            }
 
+            
+
+        }
+
+        public void camposAModificar(string campo)
+        {
             foreach (AlumnosDto alumnos in Program.listaAlumnos)
             {
-                if (alumnos.DNI.Equals(dni))
+                if (alumnos.DNI.Equals(dniInsertado))
                 {
-                    if (campo )
+                    if (campo.Equals("N"))
                     {
-
+                        Console.WriteLine("Inserte el nuevo nombre");
+                        alumnos.NombreAlumno = Console.ReadLine();
+                        Console.WriteLine(" ");
+                    }
+                    if (campo.Equals("A1"))
+                    {
+                        Console.WriteLine("Inserte el nuevo apellido1");
+                        alumnos.Apellido1Alumno = Console.ReadLine();
+                        Console.WriteLine(" ");
+                    }
+                    if (campo.Equals("A2"))
+                    {
+                        Console.WriteLine("Inserte el nuevo apellido2");
+                        alumnos.Apellido2Alumno = Console.ReadLine();
+                        Console.WriteLine(" ");
+                    }
+                    if (campo.Equals("D"))
+                    {
+                        Console.WriteLine("Inserte el nuevo direccion");
+                        alumnos.Direccion = Console.ReadLine();
+                        Console.WriteLine(" ");
+                    }
+                    if (campo.Equals("T"))
+                    {
+                        Console.WriteLine("Inserte el nuevo telefono");
+                        alumnos.Telefono = Console.ReadLine();
+                        Console.WriteLine(" ");
+                    }
+                    if (campo.Equals("E"))
+                    {
+                        Console.WriteLine("Inserte el nuevo email");
+                        alumnos.Email = Console.ReadLine();
+                        Console.WriteLine(" ");
+                    }
+                    if (campo.Equals("F"))
+                    {
+                        Console.WriteLine("Inserte el nuevo fecha");
+                        alumnos.FechaNacimiento = Convert.ToDateTime(Console.ReadLine());
+                        Console.WriteLine(" ");
                     }
                 }
             }
         }
+
 
     }
 }

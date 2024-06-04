@@ -34,7 +34,7 @@ namespace ejercicioRepasoMsm.Servicios
             int opcionSeleccionada;
 
             Console.WriteLine("#############################");
-            Console.WriteLine("0. Cerrar Aplicacion ");
+            Console.WriteLine("0. Volver atras ");
             Console.WriteLine("1. Nombre");
             Console.WriteLine("2. Apellido1");
             Console.WriteLine("3. Apellido2");
@@ -55,6 +55,7 @@ namespace ejercicioRepasoMsm.Servicios
             string rutaLog = Program.rutaLog;
             int opcionSeleccionada = 0;
             bool cerrarMenu = false;
+            string campoRespuesta = "";
 
             MenuInterfaz mi = new MenuImplementacion();
             OperacionInterfaz op = new OperacionImplementacion();
@@ -81,7 +82,10 @@ namespace ejercicioRepasoMsm.Servicios
                                 sw.Write("Ha seleccionado nombre\n");
                                 
                             }
-                            
+                            campoRespuesta = "N";
+                            op.camposAModificar(campoRespuesta);
+                            cerrarMenu = true;
+
                         break;
 
                         case 2:
@@ -91,8 +95,10 @@ namespace ejercicioRepasoMsm.Servicios
                                 sw.Write("Ha seleccionado borrar apellido\n");
 
                             }
-                           
-                        break;
+                            campoRespuesta = "A1";
+                            op.camposAModificar(campoRespuesta);
+                            cerrarMenu = true;
+                            break;
 
                         case 3:
                             using (StreamWriter sw = new StreamWriter(rutaLog, true))
@@ -101,8 +107,11 @@ namespace ejercicioRepasoMsm.Servicios
                                 sw.Write("Ha seleccionado mostrar apellido2\n");
 
                             }
-                            
-                        break;
+
+                            campoRespuesta = "A2";
+                            op.camposAModificar(campoRespuesta);
+                            cerrarMenu = true;
+                            break;
 
                         case 4:
                             using (StreamWriter sw = new StreamWriter(rutaLog, true))
@@ -111,8 +120,10 @@ namespace ejercicioRepasoMsm.Servicios
                                 sw.Write("Ha seleccionado modificar direccion\n");
 
                             }
-                            
-                        break;
+                            campoRespuesta = "D";
+                            op.camposAModificar(campoRespuesta);
+                            cerrarMenu = true;
+                            break;
 
                         case 5:
                             using (StreamWriter sw = new StreamWriter(rutaLog, true))
@@ -121,8 +132,10 @@ namespace ejercicioRepasoMsm.Servicios
                                 sw.Write("Ha seleccionado modificar telefono\n");
 
                             }
-                            //modificar alumno
-                        break;
+                            campoRespuesta = "T";
+                            op.camposAModificar(campoRespuesta);
+                            cerrarMenu = true;
+                            break;
 
                         case 6:
                             using (StreamWriter sw = new StreamWriter(rutaLog, true))
@@ -131,8 +144,11 @@ namespace ejercicioRepasoMsm.Servicios
                                 sw.Write("Ha seleccionado modificar email\n");
 
                             }
-                            //modificar alumno
-                        break;
+                            campoRespuesta = "E";
+                            op.camposAModificar(campoRespuesta);
+                            cerrarMenu = true;
+
+                            break;
 
                         case 7:
                             using (StreamWriter sw = new StreamWriter(rutaLog, true))
@@ -141,8 +157,11 @@ namespace ejercicioRepasoMsm.Servicios
                                 sw.Write("Ha seleccionado modificar fecha nacimiento\n");
 
                             }
-                            //modificar alumno
-                        break;
+                            campoRespuesta = "F";
+                            op.camposAModificar(campoRespuesta);
+                            cerrarMenu = true;
+
+                            break;
 
 
 
