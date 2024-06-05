@@ -42,7 +42,7 @@ namespace ejercicioRepasoMsm.Dtos
         public string ToString()
         {
             string alumno = 
-               string.Concat(dni, ";", nombreAlumno, ";", apellido1Alumno, ";", apellido2Alumno, ";", direccion, ";", telefono, ";", email, ";", fechaNacimiento.ToString("dd-MM-yyyy"));
+               string.Concat(dni, ";", nombreAlumno, ";", apellido1Alumno, ";", apellido2Alumno, ";", direccion, ";", telefono, ";", email, ";", fechaNacimiento.ToString("dd-MM-yyyy"), "\n");
 
             return alumno;
         }

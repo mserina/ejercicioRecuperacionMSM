@@ -45,6 +45,7 @@ namespace ejercicioRepasoMsm.Servicios
 
 
                 Program.listaAlumnos.Add(alumnos);
+               
 
                 Console.WriteLine(" ");
                 Console.WriteLine("Quieres añadir mas alumnos s/n");
@@ -157,6 +158,8 @@ namespace ejercicioRepasoMsm.Servicios
                         Console.WriteLine("Inserte el nuevo email");
                         alumnos.Email = Console.ReadLine();
                         Console.WriteLine(" ");
+                        Console.WriteLine(" ");
+                        Console.WriteLine(" ");
                     }
                     if (campo.Equals("F"))
                     {
@@ -164,6 +167,10 @@ namespace ejercicioRepasoMsm.Servicios
                         alumnos.FechaNacimiento = Convert.ToDateTime(Console.ReadLine());
                         Console.WriteLine(" ");
                     }
+
+                    Console.WriteLine(" ");
+                    Console.WriteLine("Se ha guardado correctamente los cambios");
+                    Console.WriteLine(" ");
                 }
             }
         }

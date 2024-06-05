@@ -19,22 +19,16 @@ namespace ejercicioRepasoMsm
         /// <param name="args"></param>
         public static void Main(string[] args) 
         {
-            AlumnosDto alumno = new AlumnosDto();
-
-            alumno.DNI = "2";
-            alumno.NombreAlumno = "mIHUE";
-            alumno.Apellido1Alumno = "SERRANO";
-            alumno.Apellido2Alumno = "MEDIA";
-            alumno.Direccion = "few";
-            alumno.Email = "sds";
-            alumno.FechaNacimiento = DateTime.Now;
-            listaAlumnos.Add( alumno );
+            
 
             int opcionSeleccionada = 0;
             bool cerrarMenu = false;
             
+            OperacionFicheroInterfaz fi = new OperacionFicheroImplementacion();
             MenuInterfaz mi = new MenuImplementacion();
             OperacionInterfaz op = new OperacionImplementacion();
+
+            fi.cargaInicial();
 
             while (!cerrarMenu)
             {
@@ -49,6 +43,7 @@ namespace ejercicioRepasoMsm
                                 sw.Write("Cerrando Menu\n");
                             }
                             cerrarMenu = true;
+                            fi.escribirAlumnos();
                         break;
 
                         case 1:
