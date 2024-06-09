@@ -83,7 +83,9 @@ namespace ejercicioRepasoMsm.Servicios
         {
             foreach (AlumnosDto alumnos in Program.listaAlumnos)
             {
-                Console.WriteLine(alumnos.ToString());
+                
+                string numero = alumnos.DNI.Substring(0, alumnos.DNI.Length - 1);
+                Console.WriteLine(alumnos);
             }
         }
 

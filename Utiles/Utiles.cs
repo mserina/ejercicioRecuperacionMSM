@@ -15,7 +15,7 @@ namespace ejercicioRepasoMsm.Utiles
 
         public static string nombreFicheroLog()
         {
-            string ruta = "C:\\Users\\csi23-mserina\\Desktop\\FICHEROS\\log-";
+            string ruta = "C:\\Users\\Usuario\\Desktop\\log-";
             DateTime fechaHoy = DateTime.Now;
             string fechaString = fechaHoy.ToString("ddMMyyyy");
             string rutaCompleta = String.Concat(ruta, fechaString, ".txt");
